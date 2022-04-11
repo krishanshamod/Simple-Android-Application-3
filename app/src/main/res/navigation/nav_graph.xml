@@ -18,6 +18,10 @@
         <action
             android:id="@+id/action_FirstFragment_to_ThirdFragment"
             app:destination="@id/ThirdFragment" />
+
+        <action
+            android:id="@+id/action_FirstFragment_to_FourthFragment"
+            app:destination="@id/FourthFragment" />
     </fragment>
 
     <fragment
@@ -39,6 +43,17 @@
 
         <action
             android:id="@+id/action_ThirdFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/FourthFragment"
+        android:name="com.krishanshamod.simple_android_application_3.FourthFragment"
+        android:label="@string/fourth_fragment_label"
+        tools:layout="@layout/fragment_fourth">
+
+        <action
+            android:id="@+id/action_FourthFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
