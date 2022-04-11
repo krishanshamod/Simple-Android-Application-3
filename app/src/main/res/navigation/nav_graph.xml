@@ -22,6 +22,10 @@
         <action
             android:id="@+id/action_FirstFragment_to_FourthFragment"
             app:destination="@id/FourthFragment" />
+
+        <action
+            android:id="@+id/action_FirstFragment_to_MapsFragment"
+            app:destination="@id/MapsFragment" />
     </fragment>
 
     <fragment
@@ -56,4 +60,12 @@
             android:id="@+id/action_FourthFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/MapsFragment"
+        android:name="com.krishanshamod.simple_android_application_3.MapsFragment"
+        android:label="@string/maps_fragment_label"
+        tools:layout="@layout/fragment_maps">
+    </fragment>
+
 </navigation>
