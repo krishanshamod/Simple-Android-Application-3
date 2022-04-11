@@ -39,6 +39,11 @@ class LocationAdapter(private val locationList: List<Location>): RecyclerView.Ad
             it.findNavController().navigate(R.id.action_FirstFragment_to_ThirdFragment, bundle)
         }
 
+        // navigate to edit fragment and transfer data bundle
+        holder.editButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_FirstFragment_to_FourthFragment, bundle)
+        }
+
     }
 
     //number of the items in the list
@@ -50,5 +55,6 @@ class LocationAdapter(private val locationList: List<Location>): RecyclerView.Ad
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val locationNameText: TextView = itemView.findViewById(R.id.locationNameText)
         val deleteButton: Button = itemView.findViewById(R.id.deleteButton)
+        val editButton: Button = itemView.findViewById(R.id.editButton)
     }
 }
