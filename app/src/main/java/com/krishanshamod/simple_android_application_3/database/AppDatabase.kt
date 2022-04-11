@@ -8,7 +8,7 @@ import com.krishanshamod.simple_android_application_3.model.Location
 
 @Database(entities = [Location::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun locationDao(): LocationDao
+    abstract fun LocationDao(): LocationDao
 
     companion object {
         @Volatile
@@ -26,5 +26,6 @@ abstract class AppDatabase : RoomDatabase() {
             }
 
         }
+
     }
 }

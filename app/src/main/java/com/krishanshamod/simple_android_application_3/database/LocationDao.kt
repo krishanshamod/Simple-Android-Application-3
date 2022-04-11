@@ -8,8 +8,8 @@ interface LocationDao {
     @Query("SELECT * FROM location")
     fun getAll(): List<Location>
 
-    @Query("SELECT * FROM location WHERE id = :id")
-    fun getById(id: Int): Location
+    @Query("SELECT * FROM location WHERE locationName = :locationName")
+    fun getByName(locationName: String): Location
 
     @Insert
     fun insertAll(vararg locations: Location)
