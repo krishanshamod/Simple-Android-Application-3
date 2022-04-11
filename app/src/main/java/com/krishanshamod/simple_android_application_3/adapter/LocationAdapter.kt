@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.krishanshamod.simple_android_application_3.R
@@ -44,6 +45,10 @@ class LocationAdapter(private val locationList: List<Location>): RecyclerView.Ad
             it.findNavController().navigate(R.id.action_FirstFragment_to_FourthFragment, bundle)
         }
 
+        // navigate to map fragment and transfer data bundle
+        holder.cardView.setOnClickListener {
+            it.findNavController().navigate(R.id.action_FirstFragment_to_MapsFragment, bundle)
+        }
     }
 
     //number of the items in the list
@@ -56,5 +61,6 @@ class LocationAdapter(private val locationList: List<Location>): RecyclerView.Ad
         val locationNameText: TextView = itemView.findViewById(R.id.locationNameText)
         val deleteButton: Button = itemView.findViewById(R.id.deleteButton)
         val editButton: Button = itemView.findViewById(R.id.editButton)
+        val cardView: CardView = itemView.findViewById(R.id.cardview)
     }
 }
