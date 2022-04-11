@@ -18,9 +18,15 @@ class MapsFragment : Fragment() {
 
     private val callback = OnMapReadyCallback { googleMap ->
 
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        //get bundled data
+        var args = this.arguments
+        val locationLat = args?.get("latitude").toString().toDouble()
+        val locationLong = args?.get("longitude").toString().toDouble()
+
+        val location = LatLng(locationLat, locationLong)
+        googleMap.addMarker(MarkerOptions().position(location).title("Marker in Sydney"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(location))
+        googleMap.setMinZoomPreference(5f)
     }
 
     override fun onCreateView(
