@@ -10,9 +10,6 @@ import com.krishanshamod.simple_android_application_3.database.AppDatabase
 import com.krishanshamod.simple_android_application_3.databinding.FragmentSecondBinding
 import com.krishanshamod.simple_android_application_3.model.Location
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class SecondFragment : Fragment() {
 
     private var _binding: FragmentSecondBinding? = null
@@ -42,6 +39,7 @@ class SecondFragment : Fragment() {
                 val locationLongitude = editLongitude.text.toString().toDouble()
                 val location = Location(locationName, locationLatitude, locationLongitude)
 
+                // Insert the new location in the database
                 val db = AppDatabase.getDatabase(view.context)
                 db.LocationDao().insertAll(location)
             }
